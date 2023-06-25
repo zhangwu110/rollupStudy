@@ -1,0 +1,24 @@
+{
+  "name": "rollupStudy",
+  "version": "1.0.0",
+  "description": "rollup的基本学习+基本基于react的构建",
+  "main": "index.js",
+  "dependencies": {
+    "rollup": "^3.25.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangwu110/rollupStudy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhangwu110/rollupStudy/issues"
+  },
+  "homepage": "https://github.com/zhangwu110/rollupStudy#readme"
+}

@@ -1,0 +1,20 @@
+# 编译生成的文件
+/dist/
+/build/
+
+/node_modules/
+
+# 本地配置文件
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 日志文件
+/log/
+
+# 缓存文件
+/cache/
+
+# 干扰 Git 状态的 VSCode 配置文件
+.vscode/
