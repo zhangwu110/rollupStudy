@@ -1,5 +1,5 @@
-import foo from "./foo";
+import foo from "./foo.js";
 export default function () {
     console.log(foo);
-    console.log(this);
+    console.log(globalThis, "222");
 }
