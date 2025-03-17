@@ -1,33 +1,32 @@
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import babel from '@rollup/plugin-babel';
+import terser from '@rollup/plugin-terser';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
-
-import { RollupOptions } from "rollup";
-import json from "@rollup/plugin-json";
-import terser from "@rollup/plugin-terser"
-// export default {
-//     input: "src/mian.js",
-//     output: {
-//         file: './dist/bundle.js',
-//         format: 'cjs'
-//     }
-// }
-const config: RollupOptions = {
-    input: "./src/mian.js",
+export default {
+    input: 'src/index.tsx',
     output: [
         {
-            file: "./dist/bundle.js",
-            format: "cjs"
+            file: 'dist/bundle.js',
+            format: 'cjs',
         },
         {
-            file: "./dist/bundle.min.js",
-            format: "iife",
-            plugins: [
-                terser()
-            ]
-        }
-
+            file: 'dist/bundle.min.js',
+            format: 'cjs',
+            plugins: [terser()],
+        },
     ],
     plugins: [
-        json()
-    ]
-}
-export default config; 
+        typescript(),
+        resolve(),
+        commonjs(),
+        babel({
+            babelHelpers: 'bundled',
+            exclude: 'node_modules/**'
+        }),
+        sizeSnapshot()
+    ],
+    external: ['react', 'react-dom']
+};
